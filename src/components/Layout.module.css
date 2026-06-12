@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+.layout {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "c c c c";
+  grid-template-rows: 1fr auto;
+  column-gap: 1.5625rem;
+  justify-content: center;
+  margin: 0 clamp(1rem, 3vw, 1.5rem);
+
+  @variant sm {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: ". c c c c .";
+  }
+
+  @variant md {
+    grid-template-columns: repeat(8, 4.5rem);
+    grid-template-areas: ". . c c c c . .";
+  }
+
+  @variant lg {
+    grid-template-columns: repeat(12, 4.5rem);
+    grid-template-areas: ". . . . c c c c . . . .";
+  }
+}
